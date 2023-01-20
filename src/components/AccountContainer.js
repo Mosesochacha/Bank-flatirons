@@ -1,5 +1,6 @@
+
 import React from "react";
-import TransactionsList from "./TransactionsList";
+import TransactionsList from './Transaction'
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
 

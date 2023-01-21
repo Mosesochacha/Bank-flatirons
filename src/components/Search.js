@@ -1,18 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Search({setSearch}) {
-  function handleSearch(e){
-    setSearch(e.target.value)
+
+
+function Search( {handleSearching}) {
+ const [search ,setSearch]=useState ("")
+
+  function handleSearch(values) {
+    setSearch(values)
+     console.log(search);
   }
   return (
     <div className="ui large fluid icon input">
       <input
         type="text"
         placeholder="Search your Recent Transactions"
-        onChange={handleSearch}
-        
+        onChange={(e)=>{
+          handleSearch(e.target.value)
+        }}
       />
-      <i className="circular search link icon"></i>
+      <i className="circular search link icon"
+        onClick={()=>{
+          handleSearching(search)
+        }}
+      ></i>
     </div>
   );
 }
